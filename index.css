@@ -1,0 +1,290 @@
+:root {
+    --bg-dark: #050505;
+    --purple-main: #7b2ff7;
+    --cyan-accent: #00f2fe;
+}
+
+body {
+    background-color: var(--bg-dark);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Fondo con degradado sutil como en tu imagen */
+.bg-dark-custom {
+    background: radial-gradient(circle at top right, #1a0b2e 0%, #050505 50%);
+}
+
+.logo-text {
+    color: var(--cyan-accent);
+    font-size: 1.5rem;
+}
+
+.bg-blur {
+    backdrop-filter: blur(10px);
+    background-color: rgba(5, 5, 5, 0.8);
+}
+
+.text-gradient {
+    background: linear-gradient(90deg, #ffffff, var(--purple-main));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Botones con estilo neón */
+.btn-primary-custom {
+    background-color: var(--purple-main);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(123, 47, 247, 0.4);
+    transition: 0.3s;
+}
+
+.btn-primary-custom:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(123, 47, 247, 0.6);
+    color: white;
+}
+
+/* Cards de Proyectos */
+.project-card {
+    background-color: #0d0d12;
+    border: 1px solid #1f1f2e;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.02);
+    border-color: var(--purple-main);
+}
+
+.badge.bg-purple-soft {
+    background-color: rgba(123, 47, 247, 0.15);
+    color: #b388ff;
+    border: 1px solid rgba(123, 47, 247, 0.3);
+}
+
+/* Animación del cursor en el Hero */
+.cursor {
+    display: inline-block;
+    width: 10px;
+    background-color: var(--cyan-accent);
+    margin-left: 5px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.hero-section {
+    min-height: 80vh;
+}
+
+
+/* Contenedor principal */
+.tech-slider {
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: #050505; /* Color oscuro de tu diseño */
+    position: relative;
+}
+
+/* El carril que se mueve */
+.logos-slide {
+    display: inline-flex;
+    align-items: center;
+    animation: 25s slide infinite linear; /* Ajusta los segundos para velocidad */
+}
+
+/* Cada item (icono + texto) */
+.tech-item {
+    display: flex;
+    align-items: center;
+    margin: 0 40px; /* Espaciado entre iconos */
+    color: white;
+    font-weight: 600;
+    font-family: sans-serif;
+}
+
+.tech-item img {
+    height: 30px; /* Tamaño del icono */
+    margin-right: 10px;
+    filter: grayscale(20%); /* Opcional: para que se vea más integrado */
+    transition: 0.3s;
+}
+
+.tech-item:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+/* Animación Infinita */
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Degradado en los bordes para suavizar la entrada/salida */
+.tech-slider::before, .tech-slider::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    z-index: 2;
+}
+
+.tech-slider::before {
+    left: 0;
+    background: linear-gradient(to right, #050505, transparent);
+}
+
+.tech-slider::after {
+    right: 0;
+    background: linear-gradient(to left, #050505, transparent);
+}
+
+
+
+/* Colores y Variables */
+.text-purple {
+    color: #a855f7; /* Púrpura brillante de la imagen */
+}
+
+/* Contenedor de la foto con borde de acento */
+.profile-card-img {
+    position: relative;
+    border: 2px solid #7b2ff7;
+    border-radius: 20px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(123, 47, 247, 0.2);
+}
+
+.custom-rounded {
+    border-radius: 18px;
+    display: block;
+    width: 100%;
+}
+
+/* Tarjeta de información principal */
+
+.about-card {
+    background-color: #0d0d18; /* Azul muy oscuro/negro */
+    border: 1.5px solid #1f1f2e;
+    border-right: 4px solid #7b2ff7; /* Acento lateral púrpura */
+    border-bottom: 4px solid #7b2ff7;
+    border-radius: 24px;
+    color: #e2e8f0;
+}
+
+.lead-custom {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #cbd5e1;
+}
+
+/* El nuevo estilo para la tarjeta */
+.card-container {
+    background-color: #1e293b; /* Un azul muy oscuro para que resalte el texto */
+    padding: 2rem;             /* Espacio interno para que el texto no toque los bordes */
+    border-radius: 12px;       /* Bordes redondeados modernos */
+    border: 1px solid #334155; /* Un borde sutil para dar definición */
+    max-width: 400px;          /* Limitamos el ancho para que no ocupe toda la pantalla */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidad */
+}
+
+.card-title {
+    color: #ffffff;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+/* Enlace "Ver más" */
+.view-more-link {
+    color: #a855f7;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.view-more-link:hover {
+    color: #c084fc;
+    transform: translateX(5px);
+}
+
+/* Responsividad para móviles */
+@media (max-width: 768px) {
+    .about-card {
+        border-right-width: 2px;
+        border-bottom-width: 2px;
+    }
+}
+
+/* Botón "Ver todos los proyectos" */
+.btn-projects-all {
+    background: linear-gradient(90deg, #7b2ff7, #00f2fe);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 30px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-projects-all:hover {
+    filter: brightness(1.2);
+    transform: translateY(-2px);
+    color: white;
+}
+
+/* Estilos del Acordeón */
+.custom-accordion .accordion-item {
+    background-color: #0d0d18; /* Fondo oscuro */
+    border: 1.5px solid #1f1f2e;
+    border-radius: 15px !important;
+    overflow: hidden;
+    transition: border-color 0.3s;
+}
+
+.custom-accordion .accordion-button {
+    background-color: #0d0d18;
+    color: white;
+    font-weight: 600;
+    padding: 1.25rem;
+    box-shadow: none; /* Quita el resplandor azul de Bootstrap */
+    border-bottom: 2px solid #7b2ff7; /* Línea púrpura inferior */
+}
+
+/* Quitar el icono de flecha por defecto o cambiarle el color */
+.custom-accordion .accordion-button::after {
+    filter: invert(1) sepia(100%) saturate(1000%) hue-rotate(240deg);
+}
+
+/* Estado cuando el acordeón está abierto */
+.custom-accordion .accordion-button:not(.collapsed) {
+    background-color: #161625;
+    color: #a855f7;
+    border-bottom: 2px solid #00f2fe; /* Cambia a cian al abrirse */
+}
+
+.custom-accordion .accordion-body {
+    color: #cbd5e1;
+    background-color: #0d0d18;
+}
+
+/* Efecto hover en los items */
+.custom-accordion .accordion-item:hover {
+    border-color: #7b2ff7;
+}
+
